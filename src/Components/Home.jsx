@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import { GiChocolateBar } from "react-icons/gi";
@@ -6,7 +6,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import Chocolate from "./Chocolate";
 
 const Home = () => {
-  const chocolates = useLoaderData();
+  const loadedChocolates = useLoaderData();
+  const [chocolates, setChocolates] = useState(loadedChocolates);
 
   return (
     <div>
@@ -26,6 +27,7 @@ const Home = () => {
             key={chocolate._id}
             chocolate={chocolate}
             chocolates={chocolates}
+            setChocolates={setChocolates}
           ></Chocolate>
         ))}
       </div>
