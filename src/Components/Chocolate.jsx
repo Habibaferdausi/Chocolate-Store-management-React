@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAdd, faEdit, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAdd,
+  faEdit,
+  faDeleteLeft,
+  faRemove,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
   const { _id, name, country, category, photo } = chocolate;
@@ -37,28 +42,13 @@ const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
 
   return (
     <>
-      <div className="flex justify-around p-4  text-lg font-semibold items-center bg-orange-300 mt-5 mb-3">
-        <div>
-          <h2>Photo</h2>
-        </div>
-        <div>
-          <h2>Name</h2>
-        </div>
-        <div>
-          <h2>Country</h2>
-        </div>
-        <div>
-          <h2>Category</h2>
-        </div>
-        <div>
-          <h2>Action</h2>
-        </div>
-      </div>
-
       <div className="flex justify-around text-lg font-semibold items-center">
-        <div>{photo}</div>
         <div>
-          <h2>{name}</h2>
+          {" "}
+          <img src={photo} alt="" className="h-20 w-20" />
+        </div>
+        <div>
+          <h2 className="ms-2">{name}</h2>
         </div>
         <div>
           <h2>{country}</h2>
@@ -67,16 +57,25 @@ const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
           <h2>{category}</h2>
         </div>
         <div>
-          {" "}
-          <button
-            onClick={() => handleDelete(_id)}
-            className="btn btn-accent me-3"
-          >
-            X
-          </button>
-          <Link className="btn btn-primary" to={`update/${_id}`}>
-            Edit
-          </Link>
+          <div className="flex justify-between items-center gap-4">
+            <button className="border border-orange-800 rounded p-3  bg-orange-100">
+              <Link className="" to={`update/${_id}`}>
+                <FontAwesomeIcon
+                  icon={faEdit}
+                  className="m-1 text-orange-900"
+                />
+              </Link>
+            </button>
+            <button
+              onClick={() => handleDelete(_id)}
+              className="border border-orange-800 rounded p-3 bg-orange-100"
+            >
+              <FontAwesomeIcon
+                icon={faRemove}
+                className="text-orange-900 m-1"
+              />
+            </button>
+          </div>
         </div>
       </div>
     </>

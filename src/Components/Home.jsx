@@ -22,6 +22,23 @@ const Home = () => {
 
       <div>
         <h1>Available chocolate: {chocolates.length}</h1>
+        <div className="flex justify-around p-4 rounded text-lg font-semibold items-center bg-orange-200 mt-5 mb-3">
+          <div>
+            <h2>Photo</h2>
+          </div>
+          <div>
+            <h2>Name</h2>
+          </div>
+          <div>
+            <h2>Country</h2>
+          </div>
+          <div>
+            <h2>Category</h2>
+          </div>
+          <div>
+            <h2>Action</h2>
+          </div>
+        </div>
         {chocolates.map((chocolate) => (
           <Chocolate
             key={chocolate._id}
