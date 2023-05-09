@@ -35,16 +35,47 @@ const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
 
   return (
     <>
-      name:{name}; Country:{country}; Category:{category}; Photo:{photo};
-      <div>
-        <button onClick={() => handleDelete(_id)} className="btn btn-accent">
-          X
-        </button>
-        <Link className="btn btn-primary" to={`update/${_id}`}>
-          Edit
-        </Link>
+      <div className="flex justify-between items-center bg-orange-300 mt-5 p-4 mb-3">
+        <div>
+          <h2>Photo</h2>
+        </div>
+        <div>
+          <h2>Name</h2>
+        </div>
+        <div>
+          <h2>Country</h2>
+        </div>
+        <div>
+          <h2>Category</h2>
+        </div>
+        <div>
+          <h2>Action</h2>
+        </div>
+      </div>
 
-        <button className="btn btn-secondary">View</button>
+      <div className="flex justify-between p-4 items-center">
+        <div>{photo}</div>
+        <div>
+          <h2>{name}</h2>
+        </div>
+        <div>
+          <h2>{country}</h2>
+        </div>
+        <div>
+          <h2>{category}</h2>
+        </div>
+        <div>
+          {" "}
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-accent me-3"
+          >
+            X
+          </button>
+          <Link className="btn btn-primary" to={`update/${_id}`}>
+            Edit
+          </Link>
+        </div>
       </div>
     </>
   );
