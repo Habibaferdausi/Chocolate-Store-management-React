@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAdd, faEdit, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
   const { _id, name, country, category, photo } = chocolate;
@@ -35,7 +37,7 @@ const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
 
   return (
     <>
-      <div className="flex justify-between items-center bg-orange-300 mt-5 p-4 mb-3">
+      <div className="flex justify-around p-4  text-lg font-semibold items-center bg-orange-300 mt-5 mb-3">
         <div>
           <h2>Photo</h2>
         </div>
@@ -53,7 +55,7 @@ const Chocolate = ({ chocolate, chocolates, setChocolates }) => {
         </div>
       </div>
 
-      <div className="flex justify-between p-4 items-center">
+      <div className="flex justify-around text-lg font-semibold items-center">
         <div>{photo}</div>
         <div>
           <h2>{name}</h2>
